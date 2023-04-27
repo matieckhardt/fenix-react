@@ -53,9 +53,7 @@
     />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <!-- Slick -->
-    <link rel="stylesheet" href="./css/slick.css" />
-    <link rel="stylesheet" href="./css/slick-theme.css" />
+
     <!-- Custom CSS -->
     <!-- FontAwesome -->
     <script
@@ -214,5 +212,24 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"
   ></script>
-  <script src="./js/main.js"></script>
+  <script>
+    // SMOOTH SCROLLING
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          block: "start",
+          behavior: "smooth",
+        });
+      });
+    });
+
+    // SCROLL NAVBAR CHANGE
+    $(function () {
+      $(document).scroll(function () {
+        var $nav = $(".sticky-top");
+        $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height() + 450);
+      });
+    });
+  </script>
 </html>

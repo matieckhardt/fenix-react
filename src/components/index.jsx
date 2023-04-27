@@ -8,7 +8,6 @@ import Contact from "./Home/Contact";
 import GoogleMaps from "./Home/Map";
 import Consultanos from "./Home/Consultanos";
 import Footer from "./Home/Footer";
-import Embla from "./Embla";
 
 function Home() {
   return (
